@@ -239,15 +239,28 @@ class _MyFormPageState extends State<MyFormPage> {
                             ),
                             elevation: 15,
                             child: ListView(
-                              padding: const EdgeInsets.only(top: 20, bottom: 20),
+                              padding: const EdgeInsets.all(20.0),
                               shrinkWrap: true,
                               children: <Widget>[
-                                const Center(child: Text('Informasi Data')),
-                                const SizedBox(height: 20),
+                                 Center(child: const Text('Informasi Data')),
+                                 SizedBox(height: 20),
                                 //  Munculkan informasi yang didapat dari form
-                                Text('Nama Lengkap: $_namaLengkap'),
-                                Text('Umur: $umur'),
-                                Text('Kelas PBP: $kelasPBP'),
+                                    // name
+                                    Center(child: Text('Nama Lengkap: $_namaLengkap'),),
+
+                                    // jenjang
+                                    Center(child: Text(
+                                        'Jenjang: ${jenjangDiploma ? 'Diploma' : jenjangSarjana ? 'Sarjana' : jenjangMagister ? 'Magister' : 'Doktor'}'),),
+                                    
+                                    // umur
+                                    Center(child:Text('Umur: $umur'), ),
+                                    
+                                    // kelas
+                                    Center(child: Text('Kelas PBP: $kelasPBP'),),
+                                    
+                                    // practice mode
+                                    Center(child: Text('Practice Mode: $_nilaiSwitch'),),
+                                    
                                 
                                 TextButton(
                                   onPressed: (){
